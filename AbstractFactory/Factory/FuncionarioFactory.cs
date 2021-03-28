@@ -1,6 +1,8 @@
-﻿using System.ComponentModel;
+﻿using AbstractFactory.Interface;
+using AbstractFactory.Model;
+using System.ComponentModel;
 
-namespace AbstractFactory
+namespace AbstractFactory.Factory
 {
     public class FuncionarioFactory : IFuncionarioFactory
     {

@@ -1,13 +1,15 @@
-﻿using System;
+﻿using AbstractFactory.Extension;
+using AbstractFactory.Model.AbstractFactory;
+using System;
 
-namespace AbstractFactory
+namespace AbstractFactory.Model
 {
     public class Designer : BaseFactory
     {
         private string _name = nameof(Designer);
         public Designer(string cpf) : base(3000, cpf)
         {
-            Console.WriteLine(string.Format("Funcionário {0} criado", nameof(Designer)));
+            Console.WriteLine(string.Format("Funcionário {0} criado", _name));
         }
         public override double GetBonificacao()
         {

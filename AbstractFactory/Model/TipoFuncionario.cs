@@ -1,5 +1,4 @@
-﻿
-namespace AbstractFactory
+﻿namespace AbstractFactory.Model
 {
     public enum TipoFuncionario
     {

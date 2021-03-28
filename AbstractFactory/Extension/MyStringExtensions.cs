@@ -1,5 +1,4 @@
-﻿
-namespace AbstractFactory
+﻿namespace AbstractFactory.Extension
 {
     public static class MyStringExtensions
     {

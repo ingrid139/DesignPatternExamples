@@ -1,4 +1,4 @@
-﻿namespace AbstractFactory
+﻿namespace AbstractFactory.Model.AbstractFactory
 {
     public abstract class BaseFactory
     {
@@ -13,7 +13,10 @@
         public abstract double GetBonificacao();
         public abstract void AumentarSalario();
     }
+}
 
+namespace AbstractFactory
+{
     public interface IDadosFuncionario
     {
         public string CPF { get; set; }

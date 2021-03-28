@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AbstractFactory.Factory;
+using AbstractFactory.Interface;
+using AbstractFactory.Model;
+using System;
 
 namespace AbstractFactory
 {

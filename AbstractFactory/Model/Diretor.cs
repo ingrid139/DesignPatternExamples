@@ -1,6 +1,8 @@
-﻿using System;
+﻿using AbstractFactory.Extension;
+using AbstractFactory.Model.AbstractFactory;
+using System;
 
-namespace AbstractFactory
+namespace AbstractFactory.Model
 {
     public class Diretor : BaseFactory
     {
@@ -8,7 +10,7 @@ namespace AbstractFactory
 
         public Diretor(string cpf) : base(5000, cpf)
         {
-            Console.WriteLine(string.Format("Funcionário {0} criado", nameof(Diretor)));
+            Console.WriteLine(string.Format("Funcionário {0} criado", _name));
         }
 
         public override double GetBonificacao()

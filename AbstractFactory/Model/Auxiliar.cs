@@ -1,6 +1,8 @@
-﻿using System;
+﻿using AbstractFactory.Extension;
+using AbstractFactory.Model.AbstractFactory;
+using System;
 
-namespace AbstractFactory
+namespace AbstractFactory.Model
 {
     public class Auxiliar : BaseFactory
     {
@@ -8,7 +10,7 @@ namespace AbstractFactory
 
         public Auxiliar(string cpf) : base(2000, cpf)
         {
-            Console.WriteLine(string.Format("Funcionário {0} criado", nameof(Auxiliar)));
+            Console.WriteLine(string.Format("Funcionário {0} criado", _name));
         }
         public override double GetBonificacao()
         {
