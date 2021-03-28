@@ -1,9 +1,10 @@
 ﻿using AbstractFactory.Model;
+using AbstractFactory.Model.AbstractFactory;
 
 namespace AbstractFactory.Interface
 {
     public interface IFuncionarioFactory
     {
-        void CriarFuncionario(TipoFuncionario tipo, string cpf);
+        BaseFactory CriarFuncionario(TipoFuncionario tipo, string cpf);
     }
 }

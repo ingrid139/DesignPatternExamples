@@ -6,7 +6,7 @@ namespace AbstractFactory.Model
 {
     public class Auxiliar : BaseFactory
     {
-        private string _name = nameof(Diretor);
+        private string _name = nameof(Auxiliar);
 
         public Auxiliar(string cpf) : base(2000, cpf)
         {
