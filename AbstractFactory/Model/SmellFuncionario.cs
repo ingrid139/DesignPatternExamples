@@ -5,7 +5,7 @@ namespace AbstractFactory.Model
 {
     public class SmellFuncionario
     {
-        //UglyFactory
+        //Ugly
         public string _cpf { get; set; }
         public double _salario { get; set; }
         public TipoFuncionario _tipo { get; set; }

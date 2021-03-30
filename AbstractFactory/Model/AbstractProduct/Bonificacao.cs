@@ -2,7 +2,7 @@
 {
     public abstract class Bonificacao
     {
-        public abstract void GetBonificacao(Funcionario employee);
+        public abstract void GetBonificacao(Funcionario funcionario);
     }
 }
 

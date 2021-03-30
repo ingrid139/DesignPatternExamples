@@ -8,9 +8,9 @@ namespace AbstractFactory.Model.Product
     {
         private string _name = nameof(BonificacaoB);
 
-        public override void GetBonificacao(Funcionario employee)
+        public override void GetBonificacao(Funcionario funcionario)
         {
-            var bonificacao = employee.Salario * 0.17;
+            var bonificacao = funcionario.Salario * 0.17;
             Console.WriteLine(_name.mensagemBonificacao(bonificacao));
         }
     }

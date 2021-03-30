@@ -6,6 +6,7 @@ using System.ComponentModel;
 
 namespace AbstractFactory.Factory
 {
+    //espécie de factory, mas mais simples pq cria a intancia com base numa decisão
     public class FuncionarioFactory : IFuncionarioFactory
     {
         public Financeiro CriarFuncionarioF(TipoFuncionario tipo)
