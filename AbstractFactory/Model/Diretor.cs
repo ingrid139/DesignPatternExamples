@@ -19,6 +19,7 @@ namespace AbstractFactory.Model
             Console.WriteLine(_name.mensagemBonificacao(bonificacao));
             return bonificacao;
         }
+
         public override void AumentarSalario()
         {
             Salario *= 1.15;

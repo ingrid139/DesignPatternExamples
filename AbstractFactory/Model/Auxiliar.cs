@@ -12,17 +12,18 @@ namespace AbstractFactory.Model
         {
             Console.WriteLine(string.Format("Funcionário {0} criado", _name));
         }
+
         public override double GetBonificacao()
         {
             var bonificacao = Salario * 0.2;
             Console.WriteLine(_name.mensagemBonificacao(bonificacao));
             return bonificacao;
         }
+
         public override void AumentarSalario()
         {
             Salario *= 1.1;
             Console.WriteLine(_name.mensagemAjusteSalarial(Salario));
         }
     }
-
 }

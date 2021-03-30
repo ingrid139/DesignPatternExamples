@@ -15,18 +15,3 @@
     }
 }
 
-namespace AbstractFactory
-{
-    public interface IDadosFuncionario
-    {
-        public string CPF { get; set; }
-        public double Salario { get; set; }
-    }
-
-    public interface IBaseFactory
-    {
-        double GetBonificacao();
-        void AumentarSalario();
-    }
-
-}

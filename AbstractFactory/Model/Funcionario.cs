@@ -6,8 +6,8 @@ namespace AbstractFactory.Model
     public class Funcionario
     {
         //UglyFactory
-        public string _cpf { get; protected set; }
-        public double _salario { get; protected set; }
+        public string _cpf { get; set; }
+        public double _salario { get; set; }
         public TipoFuncionario _tipo { get; set; }
 
         public Funcionario(TipoFuncionario tipo, double salario, string cpf)
@@ -33,12 +33,13 @@ namespace AbstractFactory.Model
                 Console.WriteLine(Enum.GetName(typeof(TipoFuncionario), TipoFuncionario.Designer).mensagemBonificacao(bonificacao));
                 return bonificacao;
             }
-            if (TipoFuncionario.Designer == _tipo)
+            if (TipoFuncionario.Diretor == _tipo)
             {
                 bonificacao = _salario * 0.5;
-                Console.WriteLine(Enum.GetName(typeof(TipoFuncionario), TipoFuncionario.Designer).mensagemBonificacao(bonificacao));
+                Console.WriteLine(Enum.GetName(typeof(TipoFuncionario), TipoFuncionario.Diretor).mensagemBonificacao(bonificacao));
                 return bonificacao;
             }
+            //.....
             return 0;
         }
 
@@ -59,6 +60,7 @@ namespace AbstractFactory.Model
                 _salario *= 1.15;
                 Console.WriteLine(Enum.GetName(typeof(TipoFuncionario), TipoFuncionario.Diretor).mensagemBonificacao(_salario));
             }
+            //....
         }
     }
 }

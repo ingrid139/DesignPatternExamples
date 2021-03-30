@@ -11,6 +11,7 @@ namespace AbstractFactory.Model
         {
             Console.WriteLine(string.Format("Funcionário {0} criado", _name));
         }
+
         public override double GetBonificacao()
         {
             var bonificacao = Salario * 0.17;
@@ -23,7 +24,5 @@ namespace AbstractFactory.Model
             Salario *= 1.11;
             Console.WriteLine(_name.mensagemAjusteSalarial(Salario));
         }
-
     }
-
 }
