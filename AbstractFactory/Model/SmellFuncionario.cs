@@ -3,14 +3,14 @@ using System;
 
 namespace AbstractFactory.Model
 {
-    public class Funcionario
+    public class SmellFuncionario
     {
         //UglyFactory
         public string _cpf { get; set; }
         public double _salario { get; set; }
         public TipoFuncionario _tipo { get; set; }
 
-        public Funcionario(TipoFuncionario tipo, double salario, string cpf)
+        public SmellFuncionario(TipoFuncionario tipo, double salario, string cpf)
         {
             _tipo = tipo;
             _salario = salario;
@@ -48,17 +48,17 @@ namespace AbstractFactory.Model
             if (TipoFuncionario.Auxiliar == _tipo)
             {
                 _salario *= 1.1;
-                Console.WriteLine(Enum.GetName(typeof(TipoFuncionario), TipoFuncionario.Auxiliar).mensagemBonificacao(_salario));
+                Console.WriteLine(Enum.GetName(typeof(TipoFuncionario), TipoFuncionario.Auxiliar).mensagemAjusteSalarial(_salario));
             }
             if (TipoFuncionario.Designer == _tipo)
             {
                 _salario *= 1.11;
-                Console.WriteLine(Enum.GetName(typeof(TipoFuncionario), TipoFuncionario.Designer).mensagemBonificacao(_salario));
+                Console.WriteLine(Enum.GetName(typeof(TipoFuncionario), TipoFuncionario.Designer).mensagemAjusteSalarial(_salario));
             }
             if (TipoFuncionario.Diretor == _tipo)
             {
                 _salario *= 1.15;
-                Console.WriteLine(Enum.GetName(typeof(TipoFuncionario), TipoFuncionario.Diretor).mensagemBonificacao(_salario));
+                Console.WriteLine(Enum.GetName(typeof(TipoFuncionario), TipoFuncionario.Diretor).mensagemAjusteSalarial(_salario));
             }
             //....
         }

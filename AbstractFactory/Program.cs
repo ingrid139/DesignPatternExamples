@@ -1,6 +1,9 @@
 ﻿using AbstractFactory.Factory;
 using AbstractFactory.Interface;
 using AbstractFactory.Model;
+using AbstractFactory.Model.AbstractFactory;
+using AbstractFactory.Model.Client;
+using AbstractFactory.Model.ConcreteFactory;
 using System;
 
 namespace AbstractFactory
@@ -19,37 +22,42 @@ namespace AbstractFactory
         static void CriarPorFuncionario()
         {
             Console.WriteLine("~~UglyFactory Funcionario!~~\n");
-            Funcionario funcionario = new Funcionario(TipoFuncionario.Auxiliar, 2000, "193.260.793-50");
+            SmellFuncionario funcionario = new SmellFuncionario(TipoFuncionario.Auxiliar, 2000, "193.260.793-50");
             funcionario.GetBonificacao();
             funcionario.AumentarSalario();
         }
 
         static void CriarPorAbstractFactory()
         {
-            Console.WriteLine("~~Abstract Factory!~~\n");
+            Console.WriteLine("\n~~Abstract Factory!~~\n");
 
-            Auxiliar funcionario1 = new Auxiliar("578.628.249-03");
-            funcionario1.GetBonificacao();
-            funcionario1.AumentarSalario();
+            FuncionarioAbstractFactory auxiliar = new AuxiliarFactory();
+            Financeiro financeiro = new Financeiro(auxiliar);
+            financeiro.BuscarBonificacao();
 
-            Designer funcionario2 = new Designer("498.851.570-26");
-            funcionario2.GetBonificacao();
-            funcionario2.AumentarSalario();
+            FuncionarioAbstractFactory designer = new DesignerFactory();
+            Financeiro financeiro1 = new Financeiro(designer);
+            financeiro1.BuscarBonificacao();
 
-            Diretor funcionario3 = new Diretor("363.418.659-37");
-            funcionario3.GetBonificacao();
-            funcionario3.AumentarSalario();
-
+            FuncionarioAbstractFactory diretor = new DiretorFactory();
+            Financeiro financeiro2 = new Financeiro(diretor);
+            financeiro2.BuscarBonificacao();
         }
 
         static void CriarPorFactory()
         {
-            Console.WriteLine("~~Factory!~~\n");
+            Console.WriteLine("\n~~\"Factory\"!~~\n");
 
             IFuncionarioFactory func = new FuncionarioFactory();
-            var auxiliar = func.CriarFuncionario(TipoFuncionario.Auxiliar, "193.260.793-50");
-            auxiliar.GetBonificacao();
-            auxiliar.AumentarSalario();
+            var auxiliar = func.CriarFuncionarioF(TipoFuncionario.Auxiliar);
+            auxiliar.BuscarBonificacao();
+
+            var designer = func.CriarFuncionarioF(TipoFuncionario.Designer);
+            designer.BuscarBonificacao();
+
+            var diretor = func.CriarFuncionarioF(TipoFuncionario.Diretor);
+            diretor.BuscarBonificacao();
+
         }
     }
 }

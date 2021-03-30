@@ -1,24 +1,25 @@
 ﻿using AbstractFactory.Interface;
 using AbstractFactory.Model;
-using AbstractFactory.Model.AbstractFactory;
+using AbstractFactory.Model.Client;
+using AbstractFactory.Model.ConcreteFactory;
 using System.ComponentModel;
 
 namespace AbstractFactory.Factory
 {
     public class FuncionarioFactory : IFuncionarioFactory
     {
-        public BaseFactory CriarFuncionario(TipoFuncionario tipo, string cpf)
+        public Financeiro CriarFuncionarioF(TipoFuncionario tipo)
         {
             switch (tipo)
             {
                 case TipoFuncionario.Auxiliar:
-                    return new Auxiliar(cpf);
+                    return new Financeiro(new AuxiliarFactory());
                 case TipoFuncionario.Designer:
-                    return new Designer(cpf);
+                    return new Financeiro(new DesignerFactory());
                 case TipoFuncionario.Diretor:
-                    return new Diretor (cpf);
+                    return new Financeiro(new DiretorFactory());
                 default:
-                    throw new InvalidEnumArgumentException(cpf);
+                    throw new InvalidEnumArgumentException();
             }
         }
     }

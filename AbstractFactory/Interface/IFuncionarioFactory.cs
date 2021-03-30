@@ -1,10 +1,11 @@
 ﻿using AbstractFactory.Model;
 using AbstractFactory.Model.AbstractFactory;
+using AbstractFactory.Model.Client;
 
 namespace AbstractFactory.Interface
 {
     public interface IFuncionarioFactory
     {
-        BaseFactory CriarFuncionario(TipoFuncionario tipo, string cpf);
+        Financeiro CriarFuncionarioF(TipoFuncionario tipo);
     }
 }
